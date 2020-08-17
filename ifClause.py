@@ -38,7 +38,6 @@ bmi = weight_kg / (height ** 2)
 print(bmi)
 print()
 print(f"Your BMI is {bmi:.2f}")  # New formatted string
-print('\n')
 print("Your BMI is %.2f" % bmi)  # Old formatted string
 
 if bmi < 18.5:
