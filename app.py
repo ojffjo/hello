@@ -128,11 +128,31 @@
 # print(matrix[0][1])
 # print(matrix)
 
-# Program to remove duplicate number in list
-numbers = [2, 4, 6, 8, 2, 4, 6, 10]
-unique = []  # Create new list if the number is not already in, add it to the list
-for number in numbers:
-    if number not in unique:
-        unique.append(number)
-print(unique)
+# # Program to remove duplicate number in list
+# numbers = [2, 4, 6, 8, 2, 4, 6, 10]
+# unique = []  # Create new list if the number is not already in, add it to the list
+# for number in numbers:
+#     if number not in unique:
+#         unique.append(number)
+# print(unique)
 
+
+# Dictionary
+num_dictionary = {
+    '1': 'One',
+    '2': 'Two',
+    '3': 'Three',
+    '4': 'Four',
+    '5': 'Five',
+    '6': 'Six',
+    '7': 'Seven',
+    '8': 'Eight',
+    '9': 'Nine',
+    '0': 'Zero'
+}
+
+phone = input('Phone: ')
+converted_num = ''
+for number in phone:
+    converted_num += num_dictionary.get(number, '!') + ' '
+print(converted_num)
