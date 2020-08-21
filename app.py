@@ -137,22 +137,34 @@
 # print(unique)
 
 
-# Dictionary
-num_dictionary = {
-    '1': 'One',
-    '2': 'Two',
-    '3': 'Three',
-    '4': 'Four',
-    '5': 'Five',
-    '6': 'Six',
-    '7': 'Seven',
-    '8': 'Eight',
-    '9': 'Nine',
-    '0': 'Zero'
-}
+# # Dictionary
+# num_dictionary = {
+#     '1': 'One',
+#     '2': 'Two',
+#     '3': 'Three',
+#     '4': 'Four',
+#     '5': 'Five',
+#     '6': 'Six',
+#     '7': 'Seven',
+#     '8': 'Eight',
+#     '9': 'Nine',
+#     '0': 'Zero'
+# }
+#
+# phone = input('Phone: ')
+# converted_num = ''
+# for number in phone:
+#     converted_num += num_dictionary.get(number, '!') + ' '
+# print(converted_num)
 
-phone = input('Phone: ')
-converted_num = ''
-for number in phone:
-    converted_num += num_dictionary.get(number, '!') + ' '
-print(converted_num)
+# Emoji
+message = input('> ')
+words = message.split(' ')
+emoji_dict = {
+    ':)': '😀',
+    ':(': '😔'
+}
+output = ''
+for word in words:
+    output += emoji_dict.get(word, word) + ' '
+print(output)
