@@ -33,38 +33,27 @@
 #     print('Error! "Invalid Credit Score" \nPlease, type in your Credit Score between 300 - 850')
 
 
-# # ** Weight Converter **
-# weight = input('Weight: ')
-# # to check if input is number
-# while True:
-#     try:
-#         weight = int(weight)
-#         break
-#     except ValueError:
-#         try:
-#             weight = float(weight)
-#             break
-#         except ValueError:
-#             # print('Your input is not a number. Please enter a valid Number!')
-#             break
-#
-# if isinstance(weight, int) or isinstance(weight, float):
-#     weight = float(weight)
-#     print(weight)
-#     unit = input('(L)bs or (K)g: ')
-#     unit = unit.lower()
-#     if unit == 'l':
-#         converted_weight = weight * 0.45
-#         print(f'You are {converted_weight:.1f} Kg.')
-#     elif unit == 'k':
-#         converted_weight = weight / 0.45
-#         print(f'You are {converted_weight:.1f} Lbs.')
-#     else:
-#         print('Please enter only "L" or "K"!')
-# else:
-#     print('Your input is not a number. Please enter a valid Number!')
+# ** Weight Converter **
+weight = input('Weight: ')
+# to check if input is number
+try:
+    weight = float(weight)
+except ValueError:
+    print('Your input is not a number. Please enter a valid Number!')
 
-# for loop
+if isinstance(weight, float):
+    unit = input('(L)bs or (K)g: ')
+    unit = unit.lower()
+    if unit == 'l':
+        converted_weight = weight * 0.45
+        print(f'You are {converted_weight:.1f} Kg.')
+    elif unit == 'k':
+        converted_weight = weight / 0.45
+        print(f'You are {converted_weight:.1f} Lbs.')
+    else:
+        print('Please enter only "L" or "K"!')
+
+# **for loop**
 # for item in 'Python':
 #     print(item)
 # print()
@@ -157,14 +146,21 @@
 #     converted_num += num_dictionary.get(number, '!') + ' '
 # print(converted_num)
 
-# Emoji
-message = input('> ')
-words = message.split(' ')
-emoji_dict = {
-    ':)': '😀',
-    ':(': '😔'
-}
-output = ''
-for word in words:
-    output += emoji_dict.get(word, word) + ' '
-print(output)
+# # Emoji Function
+# def emoji_converter(message):
+#     words = message.split(' ')
+#     emoji_dict = {
+#         ':)': '😀',
+#         ':(': '😔'
+#     }
+#     output = ''
+#     for word in words:
+#         output += emoji_dict.get(word, word) + ' '
+#     return output
+#
+#
+# message = input('> ')
+# converted = emoji_converter(message)
+# print(converted)
+
+
