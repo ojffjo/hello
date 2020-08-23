@@ -34,24 +34,9 @@
 
 
 # ** Weight Converter **
-weight = input('Weight: ')
-# to check if input is number
-try:
-    weight = float(weight)
-except ValueError:
-    print('Your input is not a number. Please enter a valid Number!')
-
-if isinstance(weight, float):
-    unit = input('(L)bs or (K)g: ')
-    unit = unit.lower()
-    if unit == 'l':
-        converted_weight = weight * 0.45
-        print(f'You are {converted_weight:.1f} Kg.')
-    elif unit == 'k':
-        converted_weight = weight / 0.45
-        print(f'You are {converted_weight:.1f} Lbs.')
-    else:
-        print('Please enter only "L" or "K"!')
+# from ecommerce.converter import weight_converter
+# weight = input('Weight: ')
+# weight_converter(weight)
 
 # **for loop**
 # for item in 'Python':
@@ -104,7 +89,6 @@ if isinstance(weight, float):
 # # finding the largest number in the list
 # numbers = [3, 6, 8, 37, 5, 27]
 # max_number = numbers[0]  # assume first number in the list is the largest number
-#
 # for number in numbers:
 #     if number > max_number:
 #         max_number = number
@@ -164,3 +148,35 @@ if isinstance(weight, float):
 # print(converted)
 
 
+# ** Class **
+# class Person:
+#     def __init__(self, name):
+#         self.name = name
+#
+#     def talk(self):
+#         print(f'Hi, I am {self.name}')
+#
+#
+# jiab = Person('Jiab Nattcha')
+# jiab.talk()
+
+# class Mammal:
+#     def walk(self):
+#         print('Walk')
+#
+#
+# class Dog(Mammal):
+#     def bark(self):
+#         print('Bark')
+#
+#
+# class Cat(Mammal):
+#     pass
+#
+#
+# dog1 = Dog()
+# dog1.walk()
+
+from ecommerce.utils import find_max
+numbers = [3, 5, 8, 12, 2, 10, 6, 9]
+print(find_max(numbers))
