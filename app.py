@@ -177,6 +177,55 @@
 # dog1 = Dog()
 # dog1.walk()
 
-from ecommerce.utils import find_max
-numbers = [3, 5, 8, 12, 2, 10, 6, 9]
-print(find_max(numbers))
+# from ecommerce.utils import find_max
+# numbers = [3, 5, 8, 12, 2, 10, 6, 9]
+# print(find_max(numbers))
+
+# import random
+#
+#
+# class Dice:
+#     def roll(self):
+#         dice1 = random.randint(1, 6)
+#         dice2 = random.randint(1, 6)
+#         return dice1, dice2
+#
+#
+# dice = Dice()
+# print(dice.roll())
+
+
+# files and directory
+# from pathlib import Path
+# # Absolute path  --> start from root of hardisk
+# # Relative path  --> start from current directory
+# path = Path()
+# for file in path.glob('*'):
+#     print(file)
+
+import openpyxl as xl
+from openpyxl.chart import BarChart, Reference
+
+
+def process_workbook(filename):
+    wb = xl.load_workbook(filename)
+    sheet = wb['Sheet1']
+    # cell = sheet.cell(1, 1)  # cell = sheet['a1']
+    # print(cell.value)
+    for row in range(2, sheet.max_row + 1):
+        cell = sheet.cell(row, 3)
+        corrected_price = cell.value * 0.9
+        corrected_price_cell = sheet.cell(row, 4)
+        corrected_price_cell.value = corrected_price
+
+    values = Reference(sheet,
+                       min_row=2,
+                       max_row=sheet.max_row,
+                       min_col=4,
+                       max_col=4)
+
+    chart = BarChart()
+    chart.add_data(values)
+    sheet.add_chart(chart, 'e2')
+
+    wb.save(filename)
